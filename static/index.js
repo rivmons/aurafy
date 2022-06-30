@@ -9,7 +9,7 @@ function reload() {
         }
 
         else if (this.readyState == 4){
-            
+
             data = JSON.parse(this.responseText);
 
             if (data.content == "none"){

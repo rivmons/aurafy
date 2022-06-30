@@ -22,7 +22,7 @@ def randomstr(n):
     return ''.join(random.choices(string.ascii_lowercase, k=n))
 
 def generate(id, authheader):
-    
+
     # req url
     analysisurl = f'https://api.spotify.com/v1/audio-analysis/{id}'
     featuresurl = f'https://api.spotify.com/v1/audio-features/{id}'
@@ -101,7 +101,7 @@ def generateimg(primary, secondary):
         "energetic": '#ffb079', # orange
         "sad": '#a7b4e8' # blue
     }
-    
+
 
     totalweight = primary[1] + secondary[1]
     primarymood = primary[0]
@@ -136,7 +136,7 @@ def generateimg(primary, secondary):
         x1 = randint(10, w - 10)
         img1.polygon([(x1, 0), (randint(100, 300), randint(100, 450)), (w, randint(0, h))], fill=randcolors[randint(0,3)], outline=colors[primarymood])
 
-    # right polygon 
+    # right polygon
     for i in range(2):
         y1 = randint(10, h - 10)
         img1.polygon([(w, y1), (randint(100, 300), randint(100, 450)), (w, (h - y1) * (randint(10, 100) / 100))], fill=randcolors[randint(0,3)], outline=colors[primarymood])
@@ -149,7 +149,7 @@ def generateimg(primary, secondary):
         dx = randint(100, 300)
         img1.pieslice([(x2, y2), (x2 + dx, y2 + dx)], z1, z1 + randint(0, 100), fill=randcolors[randint(0,3)])
 
-    # random ellipse 
+    # random ellipse
     for i in range(2):
         x3 = randint(0, 500)
         y3 = randint(0, 500)
@@ -165,7 +165,7 @@ def generateimg(primary, secondary):
 
     return img
 
-    
+
 
 def deviation(data, mean):
     weight = [1.084, 1.029, 1.196, 1.09, 1.5, 1.058, 1.173, 1.024, 1.157, 1.5]
@@ -174,15 +174,15 @@ def deviation(data, mean):
         deviation += (((data[i]*5) - mean[i]) * ((data[i]*5) - mean[i]) * weight[i])
 
     deviation = sqrt(deviation / (len(data) - 1))
-    return deviation 
+    return deviation
 
 def colorweights(color, weight):
 
-    colornames = {"calm": ["#F8E2EB", "#FA9DC3", "#FF82B5"], 
-        "happy": ["#D3E0D3", "#A7E1A7", "#86E986"], 
-        "energetic": ["#FCC49D", "#FF9E5B", "#FF9750"], 
+    colornames = {"calm": ["#F8E2EB", "#FA9DC3", "#FF82B5"],
+        "happy": ["#D3E0D3", "#A7E1A7", "#86E986"],
+        "energetic": ["#FCC49D", "#FF9E5B", "#FF9750"],
         "sad": ["#C3CBEA", "#ADB5D7", "#90A1E7"]}
-    
+
 
     if weight <= 0.48:
          return colornames[f'{color}'][0]

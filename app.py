@@ -63,16 +63,16 @@ def auth():
     loginurl = authurl + url + f"&redirect_uri={REDIRECT_URI}"
     return redirect(loginurl)
 
-    
+
 @app.route("/callback/", methods=["GET", "POST"])
 def callback():
 
     if request.args.get("error") != None:
         return render_template("error.html")
-    
+
     session["code"] = request.args.get("code")
     encids = base64.b64encode(("{}:{}".format(CLIENT_ID, CLIENT_SECRET)).encode())
-    
+
     accessparams = {
         'code': str(session["code"]),
         'grant_type': "authorization_code",
@@ -145,7 +145,7 @@ def analyze():
     }
 
     return jsonify(response)
-    
+
 @app.route('/refresh', methods=["GET", "POST"])
 def refresh():
 
@@ -171,6 +171,3 @@ def refresh():
 
     return "done"
 
-
-
-    
