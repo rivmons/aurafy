@@ -1,6 +1,6 @@
 # Aurafy
 
-### Video Demo:  
+### Video Demo: https://youtu.be/PZAxNjJE0fc
 
 ### Description:
 
