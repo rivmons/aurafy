@@ -1,0 +1,122 @@
+@font-face {
+    font-family: circular;
+    src: url(CircularStd-Black.otf);
+}
+
+body {
+    font-family: circular;
+}
+
+#main-footer {
+    height: 51px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: #888888;
+}
+
+#main-container {
+    background-color: pink;
+    color: #333333;
+    height: 560px;
+}
+
+#footer-div {
+    color: #444444;
+}
+
+#grid-container {
+    grid-row: 2; 
+    grid-column-start: 2; 
+    grid-column-end: 10;
+}
+
+#sub-container {
+    display: grid; 
+    justify-content: center; 
+    height: 100%; 
+    grid-template-rows: 80px 1fr; 
+    grid-template-columns: repeat(10, 1fr);
+}
+
+#vis-header {
+    font-size: 50px; 
+    font-weight: bolder; 
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+    grid-row: 1; 
+    text-align: center; 
+    grid-column-start: 3; 
+    grid-column-end: 9;
+
+}
+
+#modal-pos {
+    position: absolute; 
+    top: 84px; 
+    left: 955px;
+}
+
+.refresh-btn {
+    width: 8rem; 
+    background-color: #d83519; 
+    margin: 0.2rem;
+    height: 40px;
+}
+
+.modal-text {
+    color: palevioletred; 
+    font-weight: lighter;
+}
+
+.main-card {
+    height: 26rem;
+    grid-template-columns: 400px 1fr; 
+    grid-template-rows: 100px 1fr;
+}
+
+.card-altcontent {
+    grid-column: span 2; 
+    grid-row: 2;
+}
+
+.refresh-container {
+    grid-row: 1; 
+    grid-column: 2;
+}
+
+#footer-xticon {
+    padding: none;
+    border: none;
+    background: none;
+    margin-left: 3rem; 
+    color: transparent;
+}
+
+#songname {
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#artistname {
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+#albumname {
+    font-size: 14px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+#genimg {
+    height: 350px;
+    width: 625px;
+    border: 2px pink solid;
+
+}
+
+#songimg {
+    height: 290px; 
+    width: 290px;
+}

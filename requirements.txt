@@ -1,0 +1,4 @@
+Flask
+Flask-Session
+urllib.parse
+requests

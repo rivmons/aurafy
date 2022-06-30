@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Visualize
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid" id="main-container">
+    <div id="sub-container">
+        <div id="vis-header">
+            <p>Play a song, see its aura.</p>
+        </div>
+        <br>
+        <div id="modal-pos">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="bi bi-info-circle"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">How does it work?</h3>
+                            <button style="color: pink" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Authorization</h5>
+                            <p class="modal-text">After authorizing the use of your Spotify data, we can collect info like what song you are listening to and its audio features</p>
+                            <h5>Use</h5>
+                            <p class="modal-text">As you click the refresh button, this app will receive data on what song you are currently listening to on your device and visualize an image based on its audio features and a simple algorithm.</p>
+                            <h5>Refresh Token</h5>
+                            <p class="modal-text">Like many other web APIs, Spotify limits the usage of a certain access token to 30 minutes. If you repeatedly encounter errors in which you are playing a song but the app receives no content, 
+                                it is most likely that your access token has expired. To refresh it, just hit the <i class="bi bi-server" style="color:#888888"></i><span style="color:#888888">Refresh your Token</span> button located in the footer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="grid-container">
+            <div id="card-main" class="card text-bg-primary mb-3 main-card" style="display: none;">
+                <div class="card-body" style="padding: 10px;">
+                  <p class="card-text" id="songname" style="margin-bottom: 10px; text-align: center;"><!--songname--></p>
+                  <div style="display: flex; justify-content: center; align-items: center; height: 20px;">
+                    <p class="card-text" id="artistname" style="text-align: center; margin-bottom: 0;"><!--artist--></p>
+                    <p class="card-text" id="albumname" style="text-align: center;"><!--albumname--></p>
+                  </div>
+                  <hr>
+                  <div style="height: 100%;">
+                      <div style="text-align: center;">
+                        <img id="songimg" alt="playlist image" src=""><!--song img-->
+                      </div>
+                  </div>
+                </div>
+                <div class="card-body" style="position: absolute; left: 400px; top: 34px;">
+                    <img id="genimg" alt="generated image" src=""><!--gen img-->
+                </div>
+                <div class="refresh-container" style="grid-template-rows: 1;">
+                    <div style="display: flex; justify-content: center; height: 50px;">
+                        <button type="submit" class="btn refresh-btn" onclick="reload()" style="width: 200px; margin-top: 5px;">
+                            <i class="bi bi-skip-forward-btn-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="card-loader" class="card text-bg-primary mb-3 main-card" style="display: none;">
+                <div class="card-body card-altcontent">
+                    <div class="d-flex justify-content-center ms-auto">
+                        <div class="spinner-border" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="card-invalid" class="card text-bg-primary mb-3 main-card" style="display: grid;">
+                <div class="card-body card-altcontent">
+                    <div class="d-flex justify-content-center ms-auto">
+                        <h3 id="error-msg">Play a song and hit the button!</h3>
+                    </div>
+                </div>
+                <div class="refresh-container">
+                    <button type="submit" class="btn refresh-btn" onclick="reload()" style="float: right;">
+                        <i class="bi bi-skip-forward-btn-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <button type="submit" onclick="refresh()" class="bg-dark" style="border: none; color: #444444">
+        <i class="bi bi-server"></i><span>Refresh your Token</span>
+    </button>
+{% endblock %}
