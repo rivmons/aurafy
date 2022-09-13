@@ -1,6 +1,6 @@
 @font-face {
     font-family: circular;
-    src: url(CircularStd-Black.otf);
+    src: url(CircularStdBlack.ttf);
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 #main-footer {
-    height: 51px;
+    height: 9vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,11 +18,12 @@ body {
 #main-container {
     background-color: pink;
     color: #333333;
-    height: 560px;
+    height: 87vh;
 }
 
 #footer-div {
     color: #444444;
+    height: 4vh;
 }
 
 #grid-container {
