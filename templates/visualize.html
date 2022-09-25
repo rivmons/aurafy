@@ -38,8 +38,8 @@ Visualize
                 </div>
             </div>
         </div>
-        <div id="grid-container">
-            <div id="card-main" class="card text-bg-primary mb-3 main-card" style="display: none;">
+        <div id="grid-container" style="height: 100%;">
+            <div id="card-main" class="card text-bg-primary main-card" style="display: none;">
                 <div class="card-body" style="padding: 10px;">
                   <p class="card-text" id="songname" style="margin-bottom: 10px; text-align: center;"><!--songname--></p>
                   <div style="display: flex; justify-content: center; align-items: center; height: 20px;">
@@ -47,24 +47,22 @@ Visualize
                     <p class="card-text" id="albumname" style="text-align: center;"><!--albumname--></p>
                   </div>
                   <hr>
-                  <div style="height: 100%;">
-                      <div style="text-align: center;">
-                        <img id="songimg" alt="playlist image" src=""><!--song img-->
-                      </div>
+                  <div style="height: 100%; display: block; grid-row: 1; grid-column: 1;">
+                    <img id="songimg" alt="playlist image" src=""><!--song img-->
                   </div>
                 </div>
-                <div class="card-body" style="position: absolute; left: 400px; top: 34px;">
+                <div class="card-body" style="grid-row: 2; grid-column: 2; height: 100%;">
                     <img id="genimg" alt="generated image" src=""><!--gen img-->
                 </div>
                 <div class="refresh-container" style="grid-template-rows: 1;">
-                    <div style="display: flex; justify-content: center; height: 50px;">
-                        <button type="submit" class="btn refresh-btn" onclick="reload()" style="width: 200px; margin-top: 5px;">
+                    <div style="display: flex; justify-content: center; height: 100%; align-items: center;">
+                        <button type="submit" class="btn refresh-btn" onclick="reload()" style="width: 30vw;">
                             <i class="bi bi-skip-forward-btn-fill"></i>
                         </button>
                     </div>
                 </div>
             </div>
-            <div id="card-loader" class="card text-bg-primary mb-3 main-card" style="display: none;">
+            <div id="card-loader" class="card text-bg-primary main-card" style="display: none;">
                 <div class="card-body card-altcontent">
                     <div class="d-flex justify-content-center ms-auto">
                         <div class="spinner-border" role="status">
@@ -73,14 +71,14 @@ Visualize
                     </div>
                 </div>
             </div>
-            <div id="card-invalid" class="card text-bg-primary mb-3 main-card" style="display: grid;">
+            <div id="card-invalid" class="card text-bg-primary main-card" style="display: grid;">
                 <div class="card-body card-altcontent">
                     <div class="d-flex justify-content-center ms-auto">
                         <h3 id="error-msg">Play a song and hit the button!</h3>
                     </div>
                 </div>
                 <div class="refresh-container">
-                    <button type="submit" class="btn refresh-btn" onclick="reload()" style="float: right;">
+                    <button type="submit" class="btn refresh-btn" onclick="reload()" style="float: right; width: 10vw;">
                         <i class="bi bi-skip-forward-btn-fill"></i>
                     </button>
                 </div>

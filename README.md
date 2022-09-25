@@ -1,5 +1,7 @@
 # Aurafy
 
+### Not intended for use on smaller devices. Please use on a computer/laptop!
+
 ### Video Demo: https://youtu.be/PZAxNjJE0fc
 
 ### Description:

@@ -4,12 +4,16 @@ from flask_session import Session
 from tempfile import mkdtemp
 from io import BytesIO
 from PIL import Image
+from dotenv import load_dotenv
 
 from util import randomstr, generate
 
 import base64
 import os
 import requests
+
+# load from env file
+load_dotenv()
 
 # initialize app
 app = Flask(__name__)
@@ -37,8 +41,8 @@ tokenurl = 'https://accounts.spotify.com/api/token?'
 requrl = 'https://api.spotify.com/v1/'
 
 # initial auth parameters
-CLIENT_ID = os.environ.get("CLIENT_ID")
-CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = 'http://127.0.0.1:5000/callback/'
 SCOPES = 'user-read-currently-playing user-read-playback-state user-top-read user-read-currently-playing user-read-email'
 STATE = randomstr(16)
