@@ -11,3 +11,5 @@ The landing page is dynamic through the use of Flask Sessions. Since I store the
 Instead of using the Fetch API, I used AJAX as I didn't know how I would be able to implement a loader into the display without onreadystatechange. The loader is displayed when the status code is not 4 or the request is not finished yet. In the video, because of the screencasting, the loader is present for a very long time, but usually, the loader is only displayed for a very short time.
 
 I also created a button in the footer that allows the user to regen an access token using the API's refresh workflow. All in all, the application was a strong test of my ability to implement my ideas into a program. Looking back, there are definite improvements I can make regarding the code, but for such a simple application, they aren't necessarily imperative.
+
+## Please note that Spotify only allows API access for authorized users on the Spotify dashboard. Onboarding any user is unavailable as this is more of a hobby project. If you'd like to test this project out, please reach out to me, so I can add you on the list of authorized users :)
