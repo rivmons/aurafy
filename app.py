@@ -125,7 +125,7 @@ def analyze():
 
     if songreq.status_code == 204:
         return jsonify({"content": "none"})
-
+        
     songdata = songreq.json()
 
     if songdata["currently_playing_type"] == "ad":
