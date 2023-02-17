@@ -3,6 +3,7 @@
 ### Not intended for use on smaller devices. Please use on a computer/laptop!
 
 ![](https://user-images.githubusercontent.com/103080532/219738113-649326f3-3e84-4048-b2d4-4738572f2ae8.gif)
+<img src="https://user-images.githubusercontent.com/103080532/219738113-649326f3-3e84-4048-b2d4-4738572f2ae8.gif" width=100% height=30% />
 
 ### Description:
 
