@@ -2,7 +2,7 @@
 
 ### Not intended for use on smaller devices. Please use on a computer/laptop!
 
-### Video Demo: https://youtu.be/PZAxNjJE0fc
+https://user-images.githubusercontent.com/103080532/219738113-649326f3-3e84-4048-b2d4-4738572f2ae8.gif
 
 ### Description:
 
